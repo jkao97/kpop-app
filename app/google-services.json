@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "65695900442",
+    "firebase_url": "https://aoapp-bb27f.firebaseio.com",
+    "project_id": "aoapp-bb27f",
+    "storage_bucket": "aoapp-bb27f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65695900442:android:fd5a1637135d5dd7",
+        "android_client_info": {
+          "package_name": "com.example.james.aoa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65695900442-gdqb19i1k5f56dannhej8io8sfbu6a24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk-KsGuV-rO21raqILm_TFl0fi8wTh-IM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
