@@ -1,6 +1,7 @@
-package com.example.james.aoa;
+package com.example.james.kpop;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.ContentUris;
@@ -56,10 +57,11 @@ import java.util.Calendar;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ListActivity {
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
     private static final String TWITTER_KEY = "G9wxe7qxPH4PQwzqPz3uNkzrN";
     private static final String TWITTER_SECRET = "ZnhTtFxMO1ltiKndvXdXI9jGFnCC8Gt53ZDdFOsxdFc8KEtJZS";
+    private MediaPlayer background;
 
 
     @Override
@@ -72,29 +74,7 @@ public class MainActivity extends AppCompatActivity {
         Fabric.with(this, new Twitter(authConfig), new Crashlytics());
 
         setContentView(R.layout.activity_main);
-
-        /*Button wifi = (Button) findViewById(R.id.button);
-        wifi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ConnectivityManager Checkwifi = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-                TextView text = (TextView) findViewById(R.id.textView2);
-                if (Checkwifi == null) {
-                    text.setText("No wifi");
-                } else {
-                    NetworkInfo networkCheck = Checkwifi.getActiveNetworkInfo();
-                    boolean isConnected = networkCheck != null && networkCheck.isConnectedOrConnecting();
-                    if (isConnected) {
-                        text.setText("Wifi is Connected");
-                    } else {
-                        text.setText("No Wifi");
-                    }
-                }
-
-            }
-        });*/
-
-        MediaPlayer background = MediaPlayer.create(this, R.raw.aoa_luvme );
+        background = MediaPlayer.create(this, R.raw.aoa_luvme );
         background.start();
 
         ImageButton AOATwitter = (ImageButton) findViewById(R.id.AOATwitter);
@@ -140,7 +120,17 @@ private static int getSystemUIFlags(){
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        background.start();
+    }
 
+    @Override
+    public void onPause(){
+        super.onPause();
+        background.pause();
+    }
 
 
 }

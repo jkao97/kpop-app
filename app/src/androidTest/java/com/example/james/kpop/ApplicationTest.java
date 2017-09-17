@@ -1,4 +1,4 @@
-package com.example.james.aoa;
+package com.example.james.kpop;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
